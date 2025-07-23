@@ -1,1 +1,73 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background: linear-gradient(
+    135deg,
+    #f8f4e3 0%,
+    #f7e9a0 30%,
+    #e6c97a 60%,
+    #b0a89f 85%,
+    #222222 100%
+  );
+  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(
+    330deg,
+    #e2dfd3 0%,
+    #f7e9a0 30%,
+    #e6c97a 60%,
+    #b0a89f 100%
+  );
+  min-height: 100vh;
+}
+
+.card {
+  background: linear-gradient(
+    50deg,
+    #f8f4e3 0%,
+    #f7e9a0 20%,
+    #e6c97a 60%,
+    #d6d3ce 90%,
+    #b0a89f 100%
+  );
+  color: #222;
+  border: none;
+}
+
+button {
+  background: linear-gradient(
+    135deg,
+    #f8f4e3 0%,
+    #f7e9a0 40%,
+    #e6c97a 80%,
+    #b0a89f 100%
+  );
+  color: #222;
+  border: none;
+}
+
+input {
+  background: linear-gradient(
+    135deg,
+    #f8f4e3 0%,
+    #f7e9a0 40%,
+    #e6c97a 80%,
+    #b0a89f 100%
+  );
+  color: #222;
+  border: none;
+}
+
+textarea {
+  background: linear-gradient(
+    135deg,
+    #f8f4e3 0%,
+    #f7e9a0 40%,
+    #e6c97a 80%,
+    #b0a89f 100%
+  );
+  color: #222;
+  border: none;
+}
