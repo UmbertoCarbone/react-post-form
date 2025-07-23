@@ -1,12 +1,12 @@
 import { useState } from "react"
 function App() {
   //
-  const [name, setName] = useState("")
+  const [author, setAuthor] = useState("")
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
   //
-  function handleName(e) {
-    setName(e.target.value)
+  function handleAuthor(e) {
+    setAuthor(e.target.value)
   }
   function handleTitle(e) {
     setTitle(e.target.value)
@@ -21,12 +21,11 @@ function App() {
   return (
     <>
       <div className="container">
-
         <div className="card p-3 mx-auto mt-5" style={{ maxWidth: "400px" }}>
           {/* input nome + funzione handleName */}
           <div className="mb-3">
             <label className="form-label">Name</label>
-            <input type="text" className="form-control" placeholder="Type your name" value={name} onChange={handleName} />
+            <input type="text" className="form-control" placeholder="Type your name" value={author} onChange={handleAuthor} />
           </div>
           {/* input Title + funziona handleTitle */}
           <div className="mb-3">
