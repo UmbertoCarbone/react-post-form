@@ -11,14 +11,20 @@ function App() {
   const url = "https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts"
 
   //fetch + funzione
+  /*Blocca il comportamento standard del form
+  (che sarebbe ricaricare la pagina quando premi il button).*/
   function handleSubmit(e) {
     e.preventDefault()
-
+    /* variabile + creazione oggeti con le opzioni di richiesta */
     const requestOptions = {
+      /* method POST = voglio inviare dati(non sono leggerli) */
       method: 'POST',
+      /* headers = dico al server che sto mandando dati in formato JSON */
       headers: {
         'Content-Type': 'application/json'
       },
+      /* body = qui metto i dati che voglio inviare(nome,titolo,ecc) */
+      /* JSON.stringify = trasforma l'oggetto in una stringa che il server capisce */
       body: JSON.stringify({
         author: author,
         title: title,
@@ -26,17 +32,27 @@ function App() {
         public: isPublic
       })
     };
+    /* fetch = invia la r3ichiesta all'indirizzo dell api"url" + variabile  */
     fetch(url, requestOptions)
+      /* Server risponde, prende la risposta e la trasforomo in un oggetto leggibile da JS  */
       .then(response => response.json())
+      /* - **Quando ho i dati della risposta**:
+  - Scrivo "sono qui" in console (per vedere che ci sono arrivato).
+  - Scrivo anche i dati ricevuti dal server (così puoi vedere cosa ha risposto). */
       .then(data => {
         console.log("sono qui")
         console.log(data)
       });
   }
 
-
-  //
-
+/* Sintesi:
+Blocco refresh della pagina
+Prepari i dati da inviare
+Mandi i dati all'API
+Aspetti la risposta
+Stampi la risposta in console  */
+  
+/* Gestori di evento "event handler o handler" */
   function handleCheck(e) {
     setIsPublic(e.target.checked)
   }
