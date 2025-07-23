@@ -4,6 +4,7 @@ function App() {
   const [author, setAuthor] = useState("")
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
+  const [isPublic, setIsPublic] = useState(false)
 
   //API
   const url = "https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts"
@@ -20,7 +21,8 @@ function App() {
       body: JSON.stringify({
         author: author,
         title: title,
-        body: body
+        body: body,
+        public: isPublic
       })
     };
     fetch(url, requestOptions)
@@ -33,6 +35,10 @@ function App() {
 
 
   //
+
+  function handleCheck(e) {
+    setIsPublic(e.target.checked)
+  }
   function handleAuthor(e) {
     setAuthor(e.target.value)
   }
@@ -43,10 +49,7 @@ function App() {
     setBody(e.target.value)
   }
 
-  /* function handleTitle(e) {
-    setTitle(e.target.value)
-   }
-  */
+
   return (
     <>
       <div className="container">
@@ -68,7 +71,7 @@ function App() {
           </div>
           <div className="mb-3 form-check">
             <label className="form-check-label">Published</label>
-            <input type="checkbox" name="published" className="form-check-input" />
+            <input type="checkbox" name="published" className="form-check-input" checked={isPublic} onChange={handleCheck} />
           </div>
           <button type="submit" className="btn btn-primary w-100">
             Invia
